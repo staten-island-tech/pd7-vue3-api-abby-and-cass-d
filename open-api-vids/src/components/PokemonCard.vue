@@ -1,13 +1,17 @@
 <template>
-  <div class="card"></div>
+  <router-link :to="pokemonPath" class="card"></router-link>
   <h2>{{ pokemon.name }}</h2>
   <h3>{{ id }}</h3>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 const props = defineProps({
   pokemon: Object,
   id: Number
+})
+const pokemonPath = computed(()=>{
+  return `/PokemonData/${props.pokemon.name}` //turns the data into a url
 })
 </script>
 
