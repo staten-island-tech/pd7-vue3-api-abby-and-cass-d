@@ -1,4 +1,4 @@
-@import "./base.css";
+@import './base.css';
 
 html,
 body,
@@ -8,7 +8,7 @@ body,
   padding: 0;
   margin: 0;
   text-align: center;
-  font-family: "Bitter", serif;
+  font-family: 'Bitter', serif;
 }
 :root {
   --black: #000;
