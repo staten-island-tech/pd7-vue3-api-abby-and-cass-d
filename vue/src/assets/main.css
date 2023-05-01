@@ -1,35 +1,91 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html,
+body,
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: 'Bitter', serif;
+}
+:root {
+  --black: #000;
+  --white: #ffffff;
+  --color1: #f9ffff;
+  --color2: #2b2d32;
+  --color3: #184a76;
+  --color4: #1e96d5;
 
-  font-weight: normal;
+  /*Intentions*/
+  --primary: var(--color1);
+  --secondary: var(--color2);
+  --tertiary: var(--color3);
+  --quaternary: var(--color4);
+
+  /*Typography*/
+  --h1: 7.594rem;
+  --h2: 4.813rem;
+  --h3: 3.375rem;
+  --h4: 2.25rem;
+  --h5: 1.5rem;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+h1 {
+  font-size: var(--h1);
+  color: var(--tertiary);
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+h2 {
+  font-size: var(--h2);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+h3 {
+  font-size: var(--h3);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+h4 {
+  font-size: var(--h4);
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+h5 {
+  font-size: var(--h5);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+}
+body {
+  background-color: var(--primary);
+}
+nav {
+  font-size: var(--h3);
+  color: var(--tertiary);
+}
+button,
+button:link,
+button:visited {
+  font-size: var(--h3);
+  color: var(--secondary);
+  margin: 1rem 2rem;
+  width: 35rem;
+  height: 7rem;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border: solid 0.4rem var(--tertiary);
+  border-radius: 2rem;
+  background-color: var(--primary);
+  display: inline-block;
+  transition: all 0.2s;
+  color: var(--secondary);
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 1rem rgba(0, 0, 0, 0.2);
 }

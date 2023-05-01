@@ -1,17 +1,10 @@
 <template>
   <div>
-    <DataCards
-      v-for="(dat, index) in data"
-      :key="dat.complaint_type"
-      :id="index + 1"
-      :pokemon="dat"
-    />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import DataCards from '../components/DataCards.vue'
 const stuff = ref('') //with ref, if we need some data to update regularly like with an async function, ref lets you
 async function getStuff() {
   let result = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
