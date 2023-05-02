@@ -17,41 +17,4 @@ onMounted(() => {
   //onMounted lets you run the async function once the componenet is mounted
   getStuff()
 })
-
-import { Bar } from 'vue-chartjs'
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
-} from 'chart.js'
-
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-
-let labels = ['January', 'February', 'March']
-let datasets = [{ data: [40, 20, 12] }]
-/* export default {
-  name: 'BarChart',
-  components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: ['January', 'February', 'March'],
-        datasets: [{ data: [40, 20, 12] }]
-      },
-      chartOptions: {
-        responsive: true
-      }
-    }
-  }
-<<<<<<< HEAD
-}
-
-=======
-} */
 </script>
->>>>>>> a5ef604148c85da8701427ada1720327cd4469c6
-

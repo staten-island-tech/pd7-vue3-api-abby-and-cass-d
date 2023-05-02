@@ -1,7 +1,7 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 
-import BarChart from 'path/to/component/BarChart'
+import BarChart from '../src/components/BarChart.vue'
 
 export default {
   name: 'App',
