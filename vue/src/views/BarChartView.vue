@@ -1,11 +1,7 @@
 <template>
   <div>
     <h1>Number of People Admitted to Hospitals Due to Covid</h1>
-    <Bar
-    id="my-chart-id"
-    :options="year"
-    :data="chartData"
-  />
+    <Bar id="my-chart-id" :options="year" :data="chartData" />
   </div>
 </template>
 
@@ -23,24 +19,39 @@ onMounted(() => {
 })
 
 import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
+} from 'chart.js'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-export default {
+let labels = ['January', 'February', 'March']
+let datasets = [{ data: [40, 20, 12] }]
+/* export default {
   name: 'BarChart',
   components: { Bar },
   data() {
     return {
       chartData: {
-        labels: [ 'January', 'February', 'March'],
-        datasets: [ { data: [40, 20, 12] } ],
+        labels: ['January', 'February', 'March'],
+        datasets: [{ data: [40, 20, 12] }]
       },
       chartOptions: {
         responsive: true
       }
     }
   }
+<<<<<<< HEAD
 }
 
+=======
+} */
+</script>
+>>>>>>> a5ef604148c85da8701427ada1720327cd4469c6
 
