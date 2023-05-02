@@ -24,6 +24,7 @@
         const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
         this.chartdata = data
   
+        console.log(data)
         this.loaded = true
       } catch (e) {
         console.error(e)
