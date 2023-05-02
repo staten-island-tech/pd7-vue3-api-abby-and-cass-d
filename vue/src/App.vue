@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
 
 import BarChart from 'path/to/component/BarChart'
@@ -6,7 +6,7 @@ import BarChart from 'path/to/component/BarChart'
 export default {
   name: 'App',
   components: { BarChart }
-};
+}
 </script>
 
 <template>
