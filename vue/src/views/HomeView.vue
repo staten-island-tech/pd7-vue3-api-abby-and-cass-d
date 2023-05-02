@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Number of People Admitted to Hospitals Due to Covid</h1>
   </div>
 </template>
 
