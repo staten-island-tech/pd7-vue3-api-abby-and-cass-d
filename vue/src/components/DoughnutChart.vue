@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- <Bar v-if="loaded" :data="chartData" /> -->
-    <Bar class="barchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
+    <Doughnut class="doughnutchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
   </div>
 </template>
 
@@ -36,6 +36,7 @@ export default {
       ],
       datasets: [
         {
+          label: 'Data',
           backgroundColor: [
             '#b6feff',
             '#92feff',
@@ -72,4 +73,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  width: 35vw;
+  margin: 0rem auto;
+}
+</style>

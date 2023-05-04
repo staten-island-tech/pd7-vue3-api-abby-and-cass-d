@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <!-- <Bar v-if="loaded" :data="chartData" /> -->
+    <!--     <Bar class="barchart" id="my-chart-id" v-if="loaded" :options="chartOptions" :data="chartData" /> -->
     <Bar class="barchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
   </div>
 </template>
@@ -17,15 +17,13 @@ import {
   LinearScale
 } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export default {
   name: 'BarChart',
   components: { Bar },
   data: () => ({
-    chartOptions: {
-      responsive: true
-    },
+    chartOptions: {},
     loaded: false,
     chartData: {
       labels: [
@@ -80,4 +78,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  width: 70vw;
+  margin: 0rem auto;
+}
+/*   you did not
+  ....bruh stop hater */
+</style>
