@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Number of People Admitted to Hospitals Due to Covid</h1>
-    <Bar id="my-chart-id" :options="year" :data="chartData" />
+
   </div>
 </template>
 
