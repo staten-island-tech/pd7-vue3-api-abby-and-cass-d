@@ -1,4 +1,8 @@
 <template>
+  <div class="container">
+    <!-- <Bar v-if="loaded" :data="chartData" /> -->
+    <Bar class="barchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
+  </div>
 </template>
 
 <script>
@@ -38,15 +42,20 @@ export default {
       ],
       datasets: [
         {
+          label: 'Number of People',
           backgroundColor: [
             '#b6feff',
             '#92feff',
             '#80feff',
             '#6dfdff',
             '#5bfdff',
+            '#28fdff',
             '#07fcff',
+            '#00e3e6',
             '#00c3c5',
+            '#00a2a4',
             '#008283',
+            '#006162'
           ],
           data: [120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
         }

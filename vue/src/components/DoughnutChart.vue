@@ -36,7 +36,7 @@ export default {
       ],
       datasets: [
         {
-          label: 'Data',
+          label: 'Number of People',
           backgroundColor: [
             '#b6feff',
             '#92feff',
