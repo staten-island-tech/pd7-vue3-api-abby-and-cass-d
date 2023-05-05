@@ -1,58 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="container">
-      <Bar v-if="loaded" :data="chartData" />
-    </div>
-  </template>
-  
-  <script>
-  import { Bar } from 'vue-chartjs'
-  import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-  
-  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-  
-  export default {
-    name: 'BarChart',
-    components: { Bar },
-    data: () => ({
-      loaded: false,
-      chartData: null
-    }),
-    async mounted () {
-      this.loaded = false
-  
-      try {
-        const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
-        this.chartdata = data
-  
-        console.log(data)
-        this.loaded = true
-      } catch (e) {
-        console.error(e)
-      }
-    },
- name: 'BarChart',
-  components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: [ 'January', 'February', 'March', "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
-        datasets: {data},
-      },
-      chartOptions: {
-        responsive: true
-      }
-    }
-  }
-}
-
-
-</script>
-=======
-  <div class="container">
-    <!--     <Bar class="barchart" id="my-chart-id" v-if="loaded" :options="chartOptions" :data="chartData" /> -->
-    <Bar class="barchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
-  </div>
 </template>
 
 <script>
@@ -98,13 +44,9 @@ export default {
             '#80feff',
             '#6dfdff',
             '#5bfdff',
-            '#28fdff',
             '#07fcff',
-            '#00e3e6',
             '#00c3c5',
-            '#00a2a4',
             '#008283',
-            '#006162'
           ],
           data: [120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
         }
@@ -136,4 +78,3 @@ export default {
 /*   you did not
   ....bruh stop hater */
 </style>
->>>>>>> 62a53e6a97262031c7c039f8014f6af4ac614173

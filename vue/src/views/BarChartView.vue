@@ -1,27 +1,28 @@
 <template>
   <div>
     <h1>Number of People Admitted to Hospitals Due to Covid</h1>
-<<<<<<< HEAD
-
-=======
-    <BarChart></BarChart>
->>>>>>> 62a53e6a97262031c7c039f8014f6af4ac614173
+    
+  </div>
+  <div class="container">
+    <Bar class="barchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
-import BarChart from '../components/BarChart.vue'
-const stuff = ref('') //with ref, if we need some data to update regularly like with an async function, ref lets you
-async function getStuff() {
-  let result = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
-  let data = await result.json()
-/*   console.log(data) */
-}
-onMounted(() => {
-  //onMounted lets you run the async function once the componenet is mounted
-  getStuff()
-})
+<script>
+import { bar} from 'vue-chartjs'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
+} from 'chart.js'
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
+
+export default (await import('vue'))
 </script>
 
 <style scoped></style>
