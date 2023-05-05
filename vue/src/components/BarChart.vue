@@ -22,12 +22,25 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 export default {
   name: 'BarChart',
   components: { Bar },
+  async mounted() {
+    this.loaded = false
+
+    try {
+      const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
+      console.log(data)
+      this.chartdata = data
+      this.loaded = true
+    } catch (e) {
+      console.error(e)
+    }
+  },
   data: () => ({
+    /*     january: this.chartdata.filter((element) => element.date.includes(01)), */
     chartOptions: {},
     loaded: false,
     chartData: {
       labels: [
-        'January',
+        `January`,
         'February',
         'March',
         'April',
@@ -61,21 +74,7 @@ export default {
         }
       ]
     }
-  }),
-  async mounted() {
-    this.loaded = false
-
-    try {
-      const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
-      console.log(data)
-      this.chartdata = data
-
-      this.loaded = true
-    } catch (e) {
-      console.error(e)
-    }
-  },
-  mounted: function () {}
+  })
 }
 </script>
 

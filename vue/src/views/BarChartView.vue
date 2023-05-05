@@ -13,6 +13,7 @@ async function getStuff() {
   let result = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
   let data = await result.json()
   console.log(data)
+/*   data.filter((element) => element.date.includes()) */
 }
 onMounted(() => {
   //onMounted lets you run the async function once the componenet is mounted
