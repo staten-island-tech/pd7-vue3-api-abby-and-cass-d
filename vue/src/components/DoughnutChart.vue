@@ -16,7 +16,8 @@ export default {
   components: { Doughnut },
   data: () => ({
     chartOptions: {
-      responsive: true
+      responsive: true,
+     
     },
     loaded: false,
     chartData: {
