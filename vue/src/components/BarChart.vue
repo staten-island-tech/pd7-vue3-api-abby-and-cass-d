@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <!-- <Bar v-if="loaded" :data="chartData" /> -->
+    <Bar v-if="loaded" :data="chartData" />
     <Bar class="barchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
   </div>
 </template>
