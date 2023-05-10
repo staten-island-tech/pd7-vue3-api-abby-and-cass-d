@@ -32,18 +32,25 @@ export default {
     return { isLoaded: false, chartData: null, chartOptions: null }
   },
   async mounted() {
-    try {
-      const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
-      console.log(data)
-      this.chartdata = data
-      //now take the API data and save into a variable
-      //let x = data blah blah
-      let January = this.chartdata.filter((element) => element.date.includes(01))
-      this.loaded = true
-    } catch (e) {
-      console.error(e)
+    async function getData() {
+      try {
+        const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
+
+        // this.chartdata = data
+        return data
+
+        //now take the API data and save into a variable
+        //let x = data blah blah
+        /*       let January = this.chartdata.filter((element) => element.date.includes(01)) */
+      } catch (e) {
+        console.error(e)
+      }
     }
+    //async functions need await when using fetch
+    let x = await getData()
+
     /*     january: this.chartdata.filter((element) => element.date.includes(01)), */
+    console.log(x)
 
     this.chartData = {
       labels: [
@@ -78,7 +85,8 @@ export default {
             '#006162'
           ],
           //then data: x
-          data: [`${January}`, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
+          data: x
+          /* data: [120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10] */
         }
       ]
     }
