@@ -1,7 +1,13 @@
 <template>
   <div class="container">
     <!-- <Bar v-if="loaded" :data="chartData" /> -->
-    <Bar class="barchart" id="my-chart-id" :options="chartOptions" :data="chartData" />
+    <Bar
+      v-if="isLoaded"
+      class="barchart"
+      id="my-chart-id"
+      :options="chartOptions"
+      :data="chartData"
+    />
   </div>
 </template>
 
@@ -22,23 +28,24 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 export default {
   name: 'BarChart',
   components: { Bar },
+  data() {
+    return { isLoaded: false, chartData: null, chartOptions: null }
+  },
   async mounted() {
-    this.loaded = false
-
     try {
       const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
       console.log(data)
       this.chartdata = data
+      //now take the API data and save into a variable
+      //let x = data blah blah
+      let January = this.chartdata.filter((element) => element.date.includes(01))
       this.loaded = true
     } catch (e) {
       console.error(e)
     }
-  },
-  data: () => ({
     /*     january: this.chartdata.filter((element) => element.date.includes(01)), */
-    chartOptions: {},
-    loaded: false,
-    chartData: {
+
+    this.chartData = {
       labels: [
         `January`,
         'February',
@@ -70,11 +77,13 @@ export default {
             '#008283',
             '#006162'
           ],
-          data: [120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
+          //then data: x
+          data: [`${January}`, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
         }
       ]
     }
-  })
+    this.isLoaded = true
+  }
 }
 </script>
 
