@@ -14,6 +14,7 @@ export default {
   <nav>
     <RouterLink to="/">Bar Chart</RouterLink>
     <RouterLink to="/doughnutchart">Doughnut Chart</RouterLink>
+    <RouterLink to="/piechart">Pie Chart</RouterLink>
   </nav>
 </template>
 

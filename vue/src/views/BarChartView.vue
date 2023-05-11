@@ -6,19 +6,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
 import BarChart from '../components/BarChart.vue';
-const stuff = ref('') //with ref, if we need some data to update regularly like with an async function, ref lets you
-async function getStuff() {
-  let result = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
-  let data = await result.json()
-  //console.log(data)
-/*   data.filter((element) => element.date.includes()) */
-}
-onMounted(() => {
-  //onMounted lets you run the async function once the componenet is mounted
-  getStuff()
-})
 </script>
 
 <style scoped></style>
