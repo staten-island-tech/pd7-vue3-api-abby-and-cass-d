@@ -12,7 +12,7 @@ const stuff = ref('') //with ref, if we need some data to update regularly like 
 async function getStuff() {
   let result = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
   let data = await result.json()
-  console.log(data)
+  //console.log(data)
 /*   data.filter((element) => element.date.includes()) */
 }
 onMounted(() => {
