@@ -33,61 +33,42 @@ export default {
   },
   async mounted() {
     async function getData() {
-      
       let result = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
-      let data = await result.json();
-      return data;
-  
-  /*try {
-        const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
-        
-        // this.chartdata = data
-        return data.json()
-
-        //now take the API data and save into a variable
-        //let x = data blah blah
-        /*       let January = this.chartdata.filter((element) => element.date.includes(01)) */
-      //} catch (e) { 
-        //console.error(e) 
-      //} 
+      let data = await result.json()
+      return data
     }
     //async functions need await when using fetch
     let x = await getData()
-    
+
     var monthSums = {
-      "01": 0,
-      "02":0,
-      "03":0,
-      "04":0,
-      "05":0,
-      "06":0,
-      "07":0,
-      "08":0,
-      "09":0,
-      "10":0,
-      "11":0,
-      "12":0,
-    }; 
-   
-    for (var i = 0; i < x.length; i++){
-      //loops over every entry in x 
+      '01': 0,
+      '02': 0,
+      '03': 0,
+      '04': 0,
+      '05': 0,
+      '06': 0,
+      '07': 0,
+      '08': 0,
+      '09': 0,
+      10: 0,
+      11: 0,
+      12: 0
+    }
+
+    for (var i = 0; i < x.length; i++) {
+      //loops over every entry in x
       var entry = x[i]
-      var date = entry.date.split("-")[1]
+      var date = entry.date.split('-')[1]
       console.log(date)
       var ppl = Number(entry.ili_pne_admit)
       monthSums[date] += ppl
-      
-};
-  
-//var monthSumsArr = []
-//for ()
-console.log(monthSums)
+    }
 
-    
-
+    //var monthSumsArr = []
+    //for ()
+    console.log(monthSums)
 
     /*     january: this.chartdata.filter((element) => element.date.includes(01)), */
-   
 
     this.chartData = {
       labels: [
@@ -123,7 +104,20 @@ console.log(monthSums)
           ],
           //then data: x
           //data: x
-           data: [monthSums["01"], monthSums["02"], monthSums["03"], monthSums["04"], monthSums["05"], monthSums["06"], monthSums["07"], monthSums["08"], monthSums["09"], monthSums["10"], monthSums["11"], monthSums["12"]] 
+          data: [
+            monthSums['01'],
+            monthSums['02'],
+            monthSums['03'],
+            monthSums['04'],
+            monthSums['05'],
+            monthSums['06'],
+            monthSums['07'],
+            monthSums['08'],
+            monthSums['09'],
+            monthSums['10'],
+            monthSums['11'],
+            monthSums['12']
+          ]
         }
       ]
     }
@@ -140,3 +134,16 @@ console.log(monthSums)
 /*   you did not
   ....bruh stop hater */
 </style>
+
+<!-- /*try {
+  const { data } = await fetch('https://data.cityofnewyork.us/resource/sj3k-gzyx.json')
+  
+  // this.chartdata = data
+  return data.json()
+
+  //now take the API data and save into a variable
+  //let x = data blah blah
+  /*       let January = this.chartdata.filter((element) => element.date.includes(01)) */
+//} catch (e) {
+//console.error(e)
+//} */ -->
